@@ -1,40 +1,40 @@
 {
   "testScores": {
     "Payment System Tests": {
-      "PaSyTe1": 0,
-      "PaSyTe2": 0,
-      "PaSyTe3": 0,
-      "PaSyTe4": 0,
-      "PaSyTe5": 0,
-      "PaSyTe6": 0,
-      "PaSyTe7": 0,
-      "PaSyTe8": 0,
-      "PaSyTe9": 0,
-      "PaSyTe10": 0,
-      "PaSyTe11": 0,
-      "PaSyTe12": 0,
-      "PaSyTe13": 0,
-      "PaSyTe14": 0,
-      "PaSyTe15": 0,
-      "PaSyTe16": 0,
-      "PaSyTe17": 0
+      "PaSyTe1": 1,
+      "PaSyTe2": 1,
+      "PaSyTe3": 1,
+      "PaSyTe4": 1,
+      "PaSyTe5": 1,
+      "PaSyTe6": 1,
+      "PaSyTe7": 1,
+      "PaSyTe8": 1,
+      "PaSyTe9": 1,
+      "PaSyTe10": 1,
+      "PaSyTe11": 1,
+      "PaSyTe12": 1,
+      "PaSyTe13": 1,
+      "PaSyTe14": 1,
+      "PaSyTe15": 1,
+      "PaSyTe16": 1,
+      "PaSyTe17": 1
     },
     "Restaurant System Tests": {
       "ReSyTe1": 1,
       "ReSyTe2": 1,
-      "ReSyTe3": 0,
-      "ReSyTe4": 0,
-      "ReSyTe5": 0,
+      "ReSyTe3": 1,
+      "ReSyTe4": 1,
+      "ReSyTe5": 1,
       "ReSyTe6": 1,
-      "ReSyTe7": 0,
-      "ReSyTe8": 0,
-      "ReSyTe9": 0,
-      "ReSyTe10": 0,
-      "ReSyTe11": 0,
-      "ReSyTe12": 0,
-      "ReSyTe13": 0,
-      "ReSyTe14": 0,
-      "ReSyTe15": 0
+      "ReSyTe7": 1,
+      "ReSyTe8": 1,
+      "ReSyTe9": 1,
+      "ReSyTe10": 1,
+      "ReSyTe11": 1,
+      "ReSyTe12": 1,
+      "ReSyTe13": 1,
+      "ReSyTe14": 1,
+      "ReSyTe15": 1
     }
   },
   "idToTestNameHash": {
@@ -108,8 +108,8 @@
     "Restaurant System Tests printDescriptions does not use instanceof checks": "ReSyTe15"
   },
   "humanReadable": {
-    "Payment System Tests": "0/17",
-    "finalTestScore": "FINAL SCORE: 3/32",
-    "Restaurant System Tests": "3/15"
+    "Payment System Tests": "17/17",
+    "finalTestScore": "FINAL SCORE: 32/32",
+    "Restaurant System Tests": "15/15"
   }
 }

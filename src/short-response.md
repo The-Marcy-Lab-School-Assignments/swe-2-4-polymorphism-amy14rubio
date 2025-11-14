@@ -1,6 +1,7 @@
 # Short Responses
 
 For this short response assignment, aim to write a response with the following qualities (your instructor will give you feedback on these areas):
+
 - [] Addresses all parts of the prompt
 - [] Accurately uses relevant technical terminology
 - [] Is free of grammar and spelling mistakes (double check with grammarly!)
@@ -25,7 +26,7 @@ class Shape {
 
 class Circle extends Shape {
   constructor(radius) {
-    super('circle');
+    super("circle");
     this.radius = radius;
   }
   getArea() {
@@ -35,7 +36,7 @@ class Circle extends Shape {
 
 class Square extends Shape {
   constructor(side) {
-    super('square');
+    super("square");
     this.side = side;
   }
   getArea() {
@@ -51,7 +52,7 @@ Explain how this code demonstrates **polymorphism**. Why can we call `getArea()`
 
 ## Response 1
 
----
+We can call `getArea()` on each shape because the program executes the method based on its place in the _prototype chain_. This is **polymorphism**, which allows the `getArea()` method to take on many forms depending on the object that calls it. When `new Circle()` is called, the program will use the `getArea()` from the `Circle` class, and when `new Square ()` is called, it uses the `getArea()` from the `Square` class.
 
 ## Prompt 2
 
@@ -62,8 +63,8 @@ class Media {
   constructor(title) {
     this.title = title;
   }
-  play() { 
-    return `Playing media: ${this.title}`; 
+  play() {
+    return `Playing media: ${this.title}`;
   }
 }
 
@@ -90,10 +91,10 @@ class Podcast {
 const playlist = [
   new Song("Thriller", "Michael Jackson"),
   new Podcast("CodeNewbie", "Saron Yitbarek"),
-  new Media("voice-memo.mp3")
+  new Media("voice-memo.mp3"),
 ];
 
-playlist.forEach(item => {
+playlist.forEach((item) => {
   if (item instanceof Song) {
     console.log(item.playSong());
   } else if (item instanceof Podcast) {
@@ -111,3 +112,59 @@ This code works, but it has some problems. Answer the following:
 3. Explain what would happen if you wanted to add a new `Video` class. Compare how much work it would take with the original code versus your improved version.
 
 ## Response 2
+
+1. To use **inheritance**, I’d have `Song` and `Podcast` extend the `Media` class so they automatically get the `title` property, and I’d replace `this.title = title` with `super(title)` in their constructors. For **polymorphism**, I’d rename their play methods to `play()`, _letting the same method name work differently depending on which class is calling it_.
+
+2. **Polymorphism** simplifies the loop because instead of checking the `instanceof` each item and calling three different method names, you can call `.play()` on every item and JavaScript will use the method defined in each object's respective class.
+
+3. If I wanted to add a `Video` class, I’d extend `Media` and write my own version of `play()`. In the original code, I’d have to create a new method like `playVideo()` and add another instanceof check in the loop, which makes the code less **predictable and consistent**. With the improved version, the loop stays exactly the same and only the new class needs to be written.
+
+```js
+class Media {
+  constructor(title) {
+    this.title = title;
+  }
+  play() {
+    return `Playing media: ${this.title}`;
+  }
+}
+
+class Song extends Media {
+  constructor(title, artist) {
+    super(title);
+    this.artist = artist;
+  }
+  play() {
+    return `♪ Playing "${this.title}" by ${this.artist}`;
+  }
+}
+
+class Podcast extends Media {
+  constructor(title, host) {
+    super(title);
+    this.host = host;
+  }
+  play() {
+    return `🎙️ Playing podcast "${this.title}" hosted by ${this.host}`;
+  }
+}
+
+class Video extends Media {
+  constructor(title, creator) {
+    super(title);
+    this.creator = creator;
+  }
+  play() {
+    return `Playing video "${this.title}" created by ${this.creator}`;
+  }
+}
+
+const playlist = [
+  new Song("Thriller", "Michael Jackson"),
+  new Podcast("CodeNewbie", "Saron Yitbarek"),
+  new Media("voice-memo.mp3"),
+  new Video("funny.mp4", "Some Funny Person"),
+];
+
+playlist.forEach((item) => console.log(item.play()));
+```
